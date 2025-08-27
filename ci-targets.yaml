@@ -1,32 +1,5 @@
 # Describes the targets that the CI system will build and test on.
-
-darwin:
-  aarch64-apple-darwin:
-    arch: aarch64
-    python_versions:
-      - "3.9"
-      - "3.14"
-    build_options:
-      - debug
-
-  x86_64-apple-darwin:
-    arch: x86_64
-    python_versions:
-      - "3.9"
-      - "3.14"
-    build_options:
-      - debug
-
 linux:
-  aarch64-unknown-linux-gnu:
-    arch: aarch64
-    libc: gnu
-    python_versions:
-      - "3.9"
-      - "3.14"
-    build_options:
-      - debug
-
   x86_64-unknown-linux-gnu:
     arch: x86_64
     libc: gnu
