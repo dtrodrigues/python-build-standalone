@@ -657,10 +657,7 @@ def derive_setup_local(
 
     dest_lines.append(b"")
 
-    return {
-        "extensions": enabled_extensions,
-        "setup_local": b"\n".join(dest_lines)
-    }
+    return {"extensions": enabled_extensions, "setup_local": b"\n".join(dest_lines)}
 
 
 RE_INITTAB_ENTRY = re.compile(r'\{"([^"]+)", ([^\}]+)\},')
