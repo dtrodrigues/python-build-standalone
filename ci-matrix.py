@@ -165,9 +165,7 @@ def generate_crate_build_matrix_entries(
             # missing a Rust toolchain. On Linux, it's important that the the
             # `python-build` runner matches the `crate-build` runner because of
             # GLIBC version mismatches.
-            "runner": find_runner(
-                runners, platform, arch, True
-            ),
+            "runner": find_runner(runners, platform, arch, True),
             "crate_artifact_name": crate_artifact_name(
                 platform,
                 arch,
