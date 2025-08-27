@@ -115,7 +115,7 @@ def generate_docker_matrix_entries(
     matrix_entries = []
     for image in DOCKER_BUILD_IMAGES:
         # Find appropriate runner for Linux platform with the specified architecture
-        runner = find_runner(runners, "linux", image["arch"], False)
+        runner = find_runner(runners, "linux", image["arch"], True)
 
         entry = {
             "name": image["name"],
@@ -166,7 +166,7 @@ def generate_crate_build_matrix_entries(
             # `python-build` runner matches the `crate-build` runner because of
             # GLIBC version mismatches.
             "runner": find_runner(
-                runners, platform, arch, True if platform == "windows" else False
+                runners, platform, arch, True
             ),
             "crate_artifact_name": crate_artifact_name(
                 platform,
@@ -250,7 +250,7 @@ def add_python_build_entries_for_config(
     python_versions = config["python_versions"]
     build_options = config["build_options"]
     arch = config["arch"]
-    runner = find_runner(runners, platform, arch, False)
+    runner = find_runner(runners, platform, arch, True)
 
     # Create base entry that will be used for all variants
     base_entry = {
