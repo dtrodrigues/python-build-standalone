@@ -565,8 +565,8 @@ def derive_setup_local(
             if target_match and (python_min_match and python_max_match):
                 defines += f" -D{entry['define']}"
 
-#        if defines:
-#            line += f" $({def_name})"
+        if defines:
+            line += f" $({def_name})"
 
         for path in info.get("includes", []):
             line += f" -I{path}"
